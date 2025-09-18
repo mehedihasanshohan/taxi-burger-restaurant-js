@@ -19,10 +19,11 @@ const displayFoods = (foods) => {
   const foodContainer = document.getElementById('food-container');
   foodContainer.innerHTML = '';
 
-  foods.map(food => {
+  foods.forEach((food) => {
     const foodCard = document.createElement('div');
+
     foodCard.innerHTML = `
-    <div class="p-5 bg-white flex gap-3 shadow rounded-xl">
+    <div class="p-5 bg-white flex gap-3 mt-5 shadow rounded-xl">
             <div class="img flex-1">
               <img
                 src=${food.foodImg}
