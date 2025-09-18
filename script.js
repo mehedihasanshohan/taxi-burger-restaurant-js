@@ -14,6 +14,13 @@ const loadFoods = (id) => {
   .then(data => displayFoods(data.foods))
 }
 
+const loadRandomFoods = () => {
+  const url = ' https://taxi-kitchen-api.vercel.app/api/v1/foods/random'
+  fetch(url)
+  .then(res => res.json())
+  .then(data => displayFoods(data.foods))
+}
+
 const displayFoods = (foods) => {
   // console.log(foods);
   const foodContainer = document.getElementById('food-container');
@@ -82,3 +89,4 @@ const displayCategory = (categories) => {
 }
 
 loadCategory();
+loadRandomFoods();
