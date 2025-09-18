@@ -13,15 +13,18 @@ const displayCategory = (categories) => {
   categoryContainer.innerHTML = '';
 
   categories.map(category => {
-    const btn = document.createElement('button');
-    btn.innerText = category.categoryName;
+    const categoryCard = document.createElement('div');
+    categoryCard.innerHTML = `
+      <button class="btn btn-block shadow btn-category">
+        <img
+          src=${category.categoryImg}
+          alt=""
+          class="w-10"
+        />${category.categoryName}
+      </button>
+    `;
+    categoryContainer.appendChild(categoryCard);
 
-    btn.style.margin = "5px";
-    btn.style.padding = "8px 12px";
-    btn.style.border = "1px solid gray";
-    btn.style.borderRadius = "6px";
-
-    categoryContainer.appendChild(btn);
 
   })
 
